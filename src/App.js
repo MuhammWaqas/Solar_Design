@@ -11,6 +11,7 @@ import Email from "./pages/Estimated/Email";
 import PhoneNumber from "./pages/Estimated/PhoneNumber";
 import FinalResult from "./pages/FinalResult/FinalResult";
 import Final from "./pages/FinalResult/Final";
+import FinalPurposal from "./pages/FinalPurposal/FinalPurposal";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/phonenumber" element={<PhoneNumber />} />
           <Route path="/finalresult" element={<FinalResult />} />
           <Route path="/final" element={<Final />} />
+          <Route path="/finalpurposal" element={<FinalPurposal />} />
         </Routes>
       </div>
     </Router>
