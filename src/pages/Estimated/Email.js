@@ -58,10 +58,9 @@ export default function Email() {
                                         className="button-elementd"
                                     >
                                         NEXT
-                                        <i className="fas fa-long-arrow-alt-right ms-2" style={{ fontSize: '30px' }}></i>
                                     </a>
                                 </div>
-                                <div className="mt-3">
+                                <div className="mt-2">
                                     <a
                                         onClick={() => navigate('/info')}
                                         style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}

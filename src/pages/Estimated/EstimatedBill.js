@@ -54,7 +54,6 @@ export default function EstimatedBill() {
                                         className="button-elementd"
                                     >
                                         NEXT
-                                        <i className="fas fa-long-arrow-alt-right ms-2" style={{ fontSize: '30px' }}></i>
                                     </a>
                                 </div>
                                 <div className="mt-3">
