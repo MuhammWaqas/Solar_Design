@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
 export default function SolarEstimated() {
+    useEffect(() => {
+        // Initialize Bootstrap tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new window.bootstrap.Tooltip(tooltipTriggerEl); // Use window.bootstrap
+        });
+    }, []);
+
     return (
         <>
             <section style={{ marginTop: '3%' }}>
@@ -41,8 +49,15 @@ export default function SolarEstimated() {
                         <div class="container mt-5">
                             <div className="row justify-content-center">
                                 <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                    <div
+                                        className="info-box d-flex align-items-center"
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="A solar system's size refers to the top 
+                                        output of electricity the system is
+                                        capable of generating."
+                                    >
                                         <img
                                             src="assets/img/size_system.png"
                                             alt="System Size"
@@ -52,7 +67,9 @@ export default function SolarEstimated() {
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
                                                 <strong> 0.34 kW*</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>System Size </strong></h5>
+                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}>
+                                                <strong>System Size</strong>
+                                            </h5>
                                             <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
                                                 A solar system's size refers to the top <br />
                                                 output of electricity the system is<br />
@@ -71,7 +88,13 @@ export default function SolarEstimated() {
 
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="A solar system's size refers to the top 
+                                        output of electricity the system is
+                                        capable of generating."
+                                    >
                                         <img
                                             src="assets/img/dollar_icon.png"
                                             alt="System Size"
@@ -105,7 +128,13 @@ export default function SolarEstimated() {
                             <div className="row justify-content-center">
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="The estimated number of panels your 
+                                        home will require to meet your 
+                                        energy needs."
+                                    >
                                         <img
                                             src="assets/img/final_soicon.png"
                                             alt="System Size"
@@ -134,7 +163,12 @@ export default function SolarEstimated() {
 
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Homes with solar power have inc- 
+                                        reased market values."
+                                    >
                                         <img
                                             src="assets/img/tax_icon.png"
                                             alt="System Size"
@@ -168,7 +202,12 @@ export default function SolarEstimated() {
                             <div className="row justify-content-center">
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="US Tonnes of CO2 
+                                        Offset Per Year"
+                                    >
                                         <img
                                             src="assets/img/us_icon.png"
                                             alt="System Size"
@@ -194,7 +233,13 @@ export default function SolarEstimated() {
 
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Added Home Value
+                                        Homes with solar power have inc- 
+                                        reased market values."
+                                    >
                                         <img
                                             src="assets/img/home_icon.png"
                                             alt="System Size"
@@ -226,7 +271,12 @@ export default function SolarEstimated() {
                             <div className="row justify-content-center">
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="The total number of sun your 
+                                        roof gets."
+                                    >
                                         <img
                                             src="assets/img/hours_icon.png"
                                             alt="System Size"
@@ -255,7 +305,12 @@ export default function SolarEstimated() {
 
                                 <div className="col-md-6 mb-4">
                                     <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}>
+                                        style={{ marginLeft: '5%' }}
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Total Electricity Cost 
+                                        Without Solar"
+                                    >
                                         <img
                                             src="assets/img/electricity_icon.png"
                                             alt="System Size"

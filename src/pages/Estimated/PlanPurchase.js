@@ -8,7 +8,7 @@ export default function PlanPurchase() {
         <>
             <div
                 style={{
-                    height: "100vh",
+                    height: "110vh",
                     backgroundImage: "url(assets/img/hero-section.png)",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
@@ -25,9 +25,9 @@ export default function PlanPurchase() {
                     }}
                 >
 
-                    <div className="card" style={{ width: '60%', height: '92vh' }}>
+                    <div className="card" style={{ width: '50%', height: 'auto', padding: '10px' }}>
                         <div className="container-fluid">
-                            <div className="row d-flex justify-content-center align-items-center h-100">
+                            <div className="row d-flex justify-content-center align-items-center">
                                 <div className="col-md-12 text-center">
                                     <img
                                         src='assets/img/hero-sun.png'
@@ -39,10 +39,10 @@ export default function PlanPurchase() {
                             </div>
                         </div>
 
+                        <h2 style={{ textAlign: 'center', marginTop: '2%', fontSize: '20px', fontWeight: '600' }}>
+                            When do you plan to purchase a solar system?</h2>
+                        <div className="row g-0  mt-4">
 
-                        <div className="row g-0 h-100 mt-4">
-                            <h2 style={{ textAlign: 'center', fontSize: '20px', fontWeight: '600' }}>
-                                When do you plan to purchase a solar system?</h2>
 
                             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
                                 <div className="radio-container">
@@ -57,27 +57,30 @@ export default function PlanPurchase() {
                                     <input type="radio" id="radio3" name="option" className="custom-radio" />
                                     <label htmlFor="radio3" className="radio-label">I am not sure </label>
                                 </div>
-
-                                <div className="mt-4">
-                                    <a
-                                        onClick={() => navigate('/companyname')}
-                                        className="button-elementd"
-                                    >
-                                        NEXT
-                                    </a>
-                                </div>
-                                <div className="mt-3">
-                                    <a
-                                        onClick={() => navigate('/estimatedbill')}
-                                        style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
-                                    >
-                                        back
-                                    </a>
-                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div className="d-flex align-items-center text-muted small mt-2" style={{ marginLeft: '6%' }}>
+                            <i className="fa fa-info-circle me-2"></i>
+                            <span>Your information will remain confidential</span>
+                        </div>
 
+                        <div className="d-flex flex-column justify-content-center align-items-center text-center">
+                            <a
+                                onClick={() => navigate('/companyname')}
+                                className="button-elementd"
+                            >
+                                NEXT
+                            </a>
+                        </div>
+                        <div className="d-flex flex-column justify-content-center align-items-center text-center mt-2">
+                            <a
+                                onClick={() => navigate('/estimatedbill')}
+                                style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
+                            >
+                                back
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -85,7 +88,7 @@ export default function PlanPurchase() {
                 @media (max-width: 768px) {
                     .card {
                         width: 90% !important; /* Use !important to ensure it overrides other styles */
-                        height: 95vh !important;
+                        height: auto !important;
                         padding: 20px !important;
                     }
                 }

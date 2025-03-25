@@ -8,7 +8,7 @@ export default function EstimatedAddress() {
         <div>
             <div
                 style={{
-                    height: "120vh",
+                    height: "110vh",
                     backgroundImage:
                         "url(assets/img/hero-section.png)",
                     backgroundSize: "cover",
@@ -28,10 +28,10 @@ export default function EstimatedAddress() {
                 >
 
 
-                    <div className="d-flex justify-content-center align-items-center">
-                        <div className="card" style={{ width: '100%', height: '110vh' }}>
+                    <div className='d-flex justify-content-center align-items-center text-center mt-4'>
+                        <div className="card" style={{ width: '90%', height: 'auto', padding: '10px'}}>
                             <div className="container-fluid">
-                                <div className="row d-flex justify-content-center align-items-center h-100">
+                                <div className="row d-flex justify-content-center align-items-center">
                                     <div className="col-md-12 text-center">
                                         <img
                                             src='assets/img/hero-sun.png'
@@ -42,8 +42,8 @@ export default function EstimatedAddress() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row g-0 h-100 mt-4">
-                                <div className="col-md-6 d-flex flex-column justify-content-center align-items-center text-center">
+                            <div className="row g-0  mt-4">
+                                <div className="col-md-6 d-flex justify-content-center align-items-center text-center">
                                     <div className="sqs-html-content">
                                         <h3 style={{ whiteSpace: 'pre-wrap', fontSize: '36px', fontWeight: '600' }}>
                                             <strong>YOUR ADDRESS</strong>
@@ -77,7 +77,7 @@ export default function EstimatedAddress() {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+                                <div className="col-md-6 d-flex justify-content-center align-items-center text-center mt-4">
                                     <img
                                         src='assets/img/estimatd_add.png'
                                         alt=''
@@ -86,13 +86,23 @@ export default function EstimatedAddress() {
                                     />
                                 </div>
 
-                                
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .card {
+                        width: 90% !important; /* Use !important to ensure it overrides other styles */
+                        height: auto !important;
+                        padding: 20px !important;
+                    }
+                }
+            `}</style>
+
         </div>
+
+
     )
 }

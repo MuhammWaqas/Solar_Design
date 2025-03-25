@@ -8,7 +8,7 @@ export default function EstimatedAddress() {
         <>
             <div
                 style={{
-                    height: "100vh",
+                    height: "110vh",
                     backgroundImage: "url(assets/img/hero-section.png)",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
@@ -25,7 +25,7 @@ export default function EstimatedAddress() {
                     }}
                 >
 
-                    <div className="card" style={{ width: '60%', height: '93vh' }}>
+                    <div className="card" style={{ width: '60%', height: 'auto', padding: '10px' }}>
                         <div className="container-fluid">
                             <div className="row d-flex justify-content-center align-items-center h-100">
                                 <div className="col-md-12 text-center">
@@ -40,10 +40,11 @@ export default function EstimatedAddress() {
                         </div>
 
 
-                        <div className="row g-0 h-100 mt-4">
-                            <h2 style={{ textAlign: 'center', fontSize: '20px', fontWeight: '600' }}>
-                                Do you own or lease this property?</h2>
 
+                        <h2 style={{ textAlign: 'center', fontSize: '20px', fontWeight: '600',marginTop: '5px' }}>
+                            Do you own or lease this property?
+                        </h2>
+                        <div className="row g-0  mt-4">
                             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
                                 <div className="radio-container">
                                     <input type="radio" id="radio1" name="option" className="custom-radio" />
@@ -57,35 +58,40 @@ export default function EstimatedAddress() {
                                     <input type="radio" id="radio3" name="option" className="custom-radio" />
                                     <label htmlFor="radio3" className="radio-label">I own</label>
                                 </div>
-
-                                <div className="mt-4">
-                                    <a
-                                        onClick={() => navigate('/estimatedbill')}
-                                        className="button-elementd"
-                                    >
-                                        NEXT
-                                    </a>
-                                </div>
-                                <div className="mt-3">
-                                    <a
-                                        onClick={() => navigate('/estimatedaddress')}
-                                        style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
-                                    >
-                                        back
-                                    </a>
-                                </div>
                             </div>
                         </div>
-                    </div>
+                        {/* Icon and text below the radio buttons */}
+                        <div className="d-flex align-items-center text-muted small mt-2" style={{marginLeft: '14%'}}>
+                            <i className="fa fa-info-circle me-2"></i>
+                            <span>Your information will remain confidential</span>
+                        </div>
 
+                        <div className='d-flex flex-column justify-content-center align-items-center text-center mt-3'>
+                            <a
+                                onClick={() => navigate('/estimatedbill')}
+                                className="button-elementd"
+                            >
+                                NEXT
+                            </a>
+                        </div>
+                        <div className="d-flex flex-column justify-content-center align-items-center text-center mt-3">
+                            <a
+                                onClick={() => navigate('/estimatedaddress')}
+                                style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
+                            >
+                                back
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
             <style jsx>{`
                 @media (max-width: 768px) {
                     .card {
                         width: 90% !important; /* Use !important to ensure it overrides other styles */
-                        height: 95vh !important;
+                        height: auto !important;
                         padding: 20px !important;
                     }
                 }

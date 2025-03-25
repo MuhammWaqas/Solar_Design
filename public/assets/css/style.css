@@ -49,6 +49,57 @@ body {
     cursor: pointer;
 }
 
+.group-btn {
+  background: rgba(255, 166, 0, 1);
+  width: 150px;
+  height: 53px;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(238, 238, 238, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.group-btns {
+  background: rgba(255, 166, 0, 1);
+  width: 120px;
+  height: 43px;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(238, 238, 238, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-arrow {
+  background: rgba(255, 166, 0, 1);
+  width: 90px;
+  height: 53px;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(238, 238, 238, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .button-element {
     background: rgba(255, 166, 0, 1);
     width: 313px;

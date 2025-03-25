@@ -36,40 +36,42 @@ export default function Graph() {
             <section className="page-section" style={{ marginTop: '3%' }}>
                 <div className="content-wrapper py-5" style={{ maxWidth: '100%', maxHeight: '100%' }}>
                     <div data-fluid-engine="true">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <p style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '500', fontSize: '26px' }}><strong>Revolution Solar</strong></p>
-                                <h3 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '32px' }}><strong>30 Year Cost Analysis</strong></h3>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <p style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '500', fontSize: '26px' }}><strong>Revolution Solar</strong></p>
+                                    <h3 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '32px' }}><strong>30 Year Cost Analysis</strong></h3>
+                                </div>
+                                <div className="col-md-6">
+                                    <p style={{ color: 'rgba(8, 11, 29, 1)', fontSize: '16px' }}>
+                                        Over the next 30 years your energy bill is likely to double in cost
+                                        based on an annual 3.5% US average increase. Switching to solar
+                                        can help cut those costs by over 80%!
+                                    </p>
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <p style={{ color: 'rgba(8, 11, 29, 1)', fontSize: '16px' }}>
-                                    Over the next 30 years your energy bill is likely to double in cost
-                                    based on an annual 3.5% US average increase. Switching to solar
-                                    can help cut those costs by over 80%!
-                                </p>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center" style={{ marginTop: '5%' }}>
-                            <div className="col-12">
-                                <div style={{ textAlign: 'center' }}>
-                                    <div style={{ width: '100%', height: 'auto', display: 'flex', justifyContent: 'center' }}>
-                                        <BarChart
-                                            width={chartWidth} // Use the state variable for width
-                                            height={400}
-                                            data={data}
-                                            margin={{
-                                                top: 20,
-                                                bottom: 5,
-                                            }}
-                                        >
-                                            <CartesianGrid strokeDasharray="3 3" />
-                                            <XAxis dataKey="year" />
-                                            <YAxis />
-                                            <Tooltip />
-                                            <Legend />
-                                            <Bar dataKey="solarCost" fill="rgba(253, 119, 1, 1)" />
-                                            <Bar dataKey="withoutSolar" fill="rgba(255, 166, 0, 1)" />
-                                        </BarChart>
+                            <div className="row justify-content-center" style={{ marginTop: '5%' }}>
+                                <div className="col-12">
+                                    <div style={{ textAlign: 'center' }}>
+                                        <div style={{ width: '100%', height: 'auto', display: 'flex', justifyContent: 'center' }}>
+                                            <BarChart
+                                                width={chartWidth} // Use the state variable for width
+                                                height={400}
+                                                data={data}
+                                                margin={{
+                                                    top: 20,
+                                                    bottom: 5,
+                                                }}
+                                            >
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="year" />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Legend />
+                                                <Bar dataKey="solarCost" fill="rgba(253, 119, 1, 1)" />
+                                                <Bar dataKey="withoutSolar" fill="rgba(255, 166, 0, 1)" />
+                                            </BarChart>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

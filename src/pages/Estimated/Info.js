@@ -25,9 +25,9 @@ export default function Info() {
                     }}
                 >
 
-                    <div className="card" style={{ width: '50%', height: '92vh' }}>
+                    <div className="card" style={{ width: '50%', height: 'auto', padding: '10px' }}>
                         <div className="container-fluid">
-                            <div className="row d-flex justify-content-center align-items-center h-100">
+                            <div className="row d-flex justify-content-center align-items-center">
                                 <div className="col-md-12 text-center">
                                     <img
                                         src='assets/img/hero-sun.png'
@@ -39,8 +39,8 @@ export default function Info() {
                             </div>
                         </div>
                         <h2 style={{ textAlign: 'center', marginTop: '3%', fontSize: '20px', fontWeight: '600' }}>
-                        Almost done! What’s <br /> your name?</h2>
-                        <div className="row g-0 h-100">
+                            Almost done! What’s <br /> your name?</h2>
+                        <div className="row g-0">
                             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
 
                                 {/* Left-align the label and input */}
@@ -48,41 +48,43 @@ export default function Info() {
                                     <label className="form-label">First name</label>
                                 </div>
                                 <input type="text" className="form-control bill-s" placeholder="your job or company" />
-                               
+
                                 <div className="w-100 text-start mt-3" style={{ marginLeft: '16%' }}>
                                     <label className="form-label">Second name</label>
                                 </div>
                                 <input type="text" className="form-control bill-s" placeholder="your job or company" />
-                               
-                                <div className="mt-4">
-                                    <a
-                                        onClick={() => navigate('/email')}
-                                        className="button-elementd"
-                                    >
-                                        NEXT
-                                    </a>
-                                </div>
-                                <div className="mt-3">
-                                    <a
-                                        onClick={() => navigate('/companyname')}
-                                        style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
-                                    >
-                                        back
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        <div className="d-flex align-items-center text-muted small mt-2" style={{marginLeft: '8%'}}>
+                            <i className="fa fa-info-circle me-2"></i>
+                            <span>Your information will remain confidential</span>
+                        </div>
 
+                        <div className="d-flex flex-column justify-content-center align-items-center text-center mt-2">
+                            <a
+                                onClick={() => navigate('/email')}
+                                className="button-elementd"
+                            >
+                                NEXT
+                            </a>
+                        </div>
+                        <div className="d-flex flex-column justify-content-center align-items-center text-center mt-2">
+                            <a
+                                onClick={() => navigate('/companyname')}
+                                style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
+                            >
+                                back
+                            </a>
+                        </div>
                     </div>
-
                 </div>
-            </div>
+            </div >
 
             <style jsx>{`
                 @media (max-width: 768px) {
                     .card {
                         width: 90% !important; /* Use !important to ensure it overrides other styles */
-                        height: 95vh !important;
+                        height: auto !important;
                         padding: 20px !important;
                     }
                 }

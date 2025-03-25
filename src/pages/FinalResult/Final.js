@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 const data = [
     { year: 2021, solar: 2000, noSolar: 3000 },
@@ -10,6 +12,8 @@ const data = [
 ];
 
 export default function Final() {
+    const navigate = useNavigate();
+
     const [openSection, setOpenSection] = useState(null);
     const [imageSrc, setImageSrc] = useState("assets/img/solar_api.png");
     const [showProfileCard, setShowProfileCard] = useState(false);
@@ -49,9 +53,13 @@ export default function Final() {
 
     return (
         <>
+
             <section className="container-fluid p-0">
+
                 <div className="row g-0">
+
                     <div className="col-md-8 position-relative">
+
                         <img
                             src={imageSrc}
                             alt="Solar System Map"
@@ -162,10 +170,23 @@ export default function Final() {
                         )}
                     </div>
 
-                    <div className="col-md-4 d-flex align-items-center" style={{ background: "#f8f8f8", height: "100vh", marginTop: "-3%" }}>
+                    <div className="col-md-4 d-flex align-items-center" style={{ background: "#f8f8f8", height: "auto", marginTop: "-3%" }}>
                         <div className="container">
-                            <div className="mb-3">
-                                <input type="text" className="form-control me-sm-3" placeholder="Enter a valid address" />
+                            <div className="text-center" style={{ marginTop: '10%' }}>
+                                <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center">
+                                    <input
+                                        type="text"
+                                        className="form-control mb-2 mb-sm-0 me-sm-2" // Add margin-bottom for spacing on mobile
+                                        placeholder="Enter a valid address"
+                                        style={{ flex: '1' }} // Allow input to grow
+                                    />
+                                    <a
+                                        onClick={() => navigate('/finalpurposal')}
+                                        className="button-arrow" // Add Bootstrap button classes for styling
+                                    >
+                                        <i className="fas fa-long-arrow-alt-right ms-2" style={{ fontSize: '30px' }}></i>
+                                    </a>
+                                </div>
                             </div>
 
                             <p className="text-muted text-center mt-4">
@@ -249,10 +270,109 @@ export default function Final() {
                                     )}
                                 </div>
                             </div>
+
+                            <div className="d-flex flex-row justify-content-center align-items-center text-center" style={{ marginTop: '8%' }}>
+                                <div className="me-2"> {/* Add margin-end for spacing between buttons */}
+                                    <a
+
+                                        className="group-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                    >
+                                        Show Proposal
+                                    </a>
+                                </div>
+                                <div>
+                                    <a
+                                        className="group-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                    >
+                                        Contact Me
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <div
+                className="modal fade"
+                id="exampleModal"
+                tabIndex={-1}
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">
+                              Powerd by MC3 
+                            </h1>
+                            <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            />
+                        </div>
+                        <div className="modal-body">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="mb-3">
+                                        <label className="form-label">
+                                            First Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="enter your first name"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="mb-3">
+                                        <label className="form-label">
+                                            Last Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="enter your last name"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-12">
+                                    <div className="mb-3">
+                                        <label htmlFor="exampleInputEmail1" className="form-label">
+                                            Email address
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="exampleInputEmail1"
+                                            aria-describedby="emailHelp"
+                                            placeholder="enter your email"
+                                        />
+                                    </div>
+                                </div>
+                                <div id="emailHelp" className="form-text">
+                                   To fill this form then you move next
+                                </div>
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <div className="d-flex flex-row justify-content-center align-items-center text-center">
+                                <button type="button" className="group-btns">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </>
     );
 }

@@ -45,7 +45,7 @@ export default function Estimated() {
                                 type="text"
                                 className="form-control mb-2 mb-sm-0 me-sm-2" // Add margin-bottom for spacing on mobile
                                 placeholder="Enter a valid address"
-                                style={{ width: 'auto', flex: '1' }} // Allow input to grow
+                                style={{ flex: '1' }} // Allow input to grow
                             />
                             <a
                                 onClick={() => navigate('/estimatedaddress')}
