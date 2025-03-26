@@ -127,14 +127,13 @@ export default function SolarEstimated() {
                         <div class="container mt-5">
                             <div className="row justify-content-center">
                                 <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
-                                        style={{ marginLeft: '5%' }}
+                                    <div className="info-box d-flex align-items-center" style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="The estimated number of panels your 
-                                        home will require to meet your 
-                                        energy needs."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
+                                        
+
                                         <img
                                             src="assets/img/final_soicon.png"
                                             alt="System Size"

@@ -4,7 +4,7 @@ export default function ProposalHeader() {
     return (
         <>
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{height: '10vh !important', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'}}>
                 <div className="container-fluid d-flex justify-content-between align-items-center">
                     {/* Left Side: Company Name */}
                     <a className="navbar-brand" href="#" style={{fontSize: '16px'}}>
@@ -16,7 +16,7 @@ export default function ProposalHeader() {
                         <img
                             src="assets/img/hero-sun.png" // Replace with your logo path
                             alt="Company Logo"
-                            style={{ height: '60px' }} // Adjust height as needed
+                            style={{ height: '40px' }} 
                         />
                     </div>
 
