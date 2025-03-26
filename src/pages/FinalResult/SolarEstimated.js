@@ -46,18 +46,16 @@ export default function SolarEstimated() {
                             </div>
                         </div>
 
-                        <div class="container mt-5">
-                            <div className="row justify-content-center">
-                                <div className="col-md-6 mb-4">
+                        <div className="container mt-5">
+                            <div className="row justify-content-center d-flex">
+                                <div className="col-md-6 mb-4 d-flex flex-column">
                                     <div
-                                        className="info-box d-flex align-items-center"
+                                        className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="A solar system's size refers to the top 
-                                        output of electricity the system is
-                                        capable of generating."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/size_system.png"
                                             alt="System Size"
@@ -65,16 +63,15 @@ export default function SolarEstimated() {
                                         />
                                         <div>
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong> 0.34 kW*</strong>
+                                                <strong> System Details</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}>
-                                                <strong>System Size</strong>
-                                            </h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                A solar system's size refers to the top <br />
-                                                output of electricity the system is<br />
-                                                capable of generating.
-                                            </p>
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Size (KW)</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Panels (#, maker, size, efficiency)</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Annual generation, estimated (KWh)</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Inverter (maker and efficiency)</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Percentage of annual electricity use</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -86,15 +83,12 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
 
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
-                                        data-bs-placement="top"
-                                        title="A solar system's size refers to the top 
-                                        output of electricity the system is
-                                        capable of generating."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/dollar_icon.png"
                                             alt="System Size"
@@ -102,14 +96,12 @@ export default function SolarEstimated() {
                                         />
                                         <div>
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong> 0.34 kW*</strong>
+                                                <strong> Incentives</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>25 Year Savings </strong></h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                A solar system's size refers to the top <br />
-                                                output of electricity the system is<br />
-                                                capable of generating.
-                                            </p>
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Federal Incentive (FTC)</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>State Incentives (over 10 years, estimated)</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -121,19 +113,18 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="container mt-5">
-                            <div className="row justify-content-center">
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center" style={{ marginLeft: '5%' }}
+                        <div className="container mt-5">
+                            <div className="row justify-content-center d-flex">
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div
+                                        className="info-box d-flex align-items-center flex-grow-1"
+                                        style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
-                                        
-
                                         <img
                                             src="assets/img/final_soicon.png"
                                             alt="System Size"
@@ -141,14 +132,8 @@ export default function SolarEstimated() {
                                         />
                                         <div>
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong> undefined*</strong>
+                                                <strong> ROI</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>Solar Panels</strong></h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                The estimated number of panels your <br />
-                                                home will require to meet your<br />
-                                                energy needs.
-                                            </p>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -160,14 +145,13 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
 
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="Homes with solar power have inc- 
-                                        reased market values."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/tax_icon.png"
                                             alt="System Size"
@@ -175,14 +159,12 @@ export default function SolarEstimated() {
                                         />
                                         <div>
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong>$520*</strong>
+                                                <strong>Savings</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>Tax Incentives</strong></h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                This is the available incentives in <br />
-                                                your area for a solar array of this <br />
-                                                size.
-                                            </p>
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Total Avoided electric utility costs</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Net savings</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -194,31 +176,32 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="container mt-5">
-                            <div className="row justify-content-center">
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+                        <div className="container mt-5">
+                            <div className="row justify-content-center d-flex">
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="US Tonnes of CO2 
-                                        Offset Per Year"
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/us_icon.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
                                         <div>
-                                            <h2 style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong> 892*</strong>
+                                            <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
+                                                <strong> Costs</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>US Tonnes of CO2 <br />
-                                                Offset Per Year </strong></h5>
-
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Price Per Watt (PPW):</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Install Cost, Solar Home System</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>EV Charger</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Total: Solar + EV Charger</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -230,15 +213,13 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
 
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="Added Home Value
-                                        Homes with solar power have inc- 
-                                        reased market values."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/home_icon.png"
                                             alt="System Size"
@@ -246,13 +227,12 @@ export default function SolarEstimated() {
                                         />
                                         <div>
                                             <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong> $12,000*</strong>
+                                                <strong> Financing</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>Added Home Value</strong></h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                Homes with solar power have inc- <br />
-                                                reased market values.
-                                            </p>
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Loan APR</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Monthly Payment (by 10, 15, and 20 yr term)</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -264,33 +244,30 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
                             </div>
-
                         </div>
-                        <div class="container mt-5">
-                            <div className="row justify-content-center">
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+
+                        <div className="container mt-5">
+                            <div className="row justify-content-center d-flex">
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="The total number of sun your 
-                                        roof gets."
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/hours_icon.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
                                         <div>
-                                            <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
-                                                <strong>1597*</strong>
+                                            <h2 style={{ color: 'rgba(255, 166, 0, 1)', fontSize: '28px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
+                                                <strong>Environmental Benefit</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>US Tonnes of CO2 <br />
-                                                Sun Hours </strong></h5>
-                                            <p style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '14px', margin: 0, textAlign: 'left' }}>
-                                                The total number of sun your <br />
-                                                roof gets.
-                                            </p>
+                                            <ul style={{ color: 'rgba(253, 119, 1, 1)', listStyleType: 'none', paddingLeft: '0', marginTop: '3%' }}>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>CO2 savings, over 20 years</li>
+                                                <li style={{ marginBottom: '8px', textAlign: 'left' }}>Reduction in average household carbon footprint (%)</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -302,14 +279,13 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
 
-                                <div className="col-md-6 mb-4">
-                                    <div className="info-box d-flex align-items-center"
+                                <div className="col-md-6 mb-4 d-flex flex-column">
+                                    <div className="info-box d-flex align-items-center flex-grow-1"
                                         style={{ marginLeft: '5%' }}
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="top"
-                                        title="Total Electricity Cost 
-                                        Without Solar"
-                                    >
+                                        data-bs-html="true"
+                                        title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
                                             src="assets/img/electricity_icon.png"
                                             alt="System Size"
@@ -319,9 +295,9 @@ export default function SolarEstimated() {
                                             <h2 style={{ color: 'rgba(253, 119, 1, 1)', fontSize: '34px', fontWeight: '800', marginBottom: '5px', textAlign: 'left' }}>
                                                 <strong>$82,500*</strong>
                                             </h2>
-                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}><strong>Total Electricity Cost <br />
-                                                Without Solar</strong></h5>
-
+                                            <h5 style={{ color: 'rgba(253, 119, 1, 1)', fontWeight: '700', marginBottom: '8px', textAlign: 'left' }}>
+                                                <strong>Total Electricity Cost <br /> Without Solar</strong>
+                                            </h5>
                                         </div>
                                     </div>
                                     <hr style={{
@@ -333,7 +309,6 @@ export default function SolarEstimated() {
                                     }} />
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
