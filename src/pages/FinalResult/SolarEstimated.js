@@ -90,7 +90,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/dollar_icon.png"
+                                            src="assets/img/incentives.jpg"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
@@ -126,7 +126,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/final_soicon.png"
+                                            src="assets/img/roi_icon.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
@@ -153,7 +153,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/tax_icon.png"
+                                            src="assets/img/dollar_icon.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
@@ -188,7 +188,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/us_icon.png"
+                                            src="assets/img/cost.webp"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
@@ -221,7 +221,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/home_icon.png"
+                                            src="assets/img/financing.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />
@@ -256,7 +256,7 @@ export default function SolarEstimated() {
                                         data-bs-html="true"
                                         title='<div style="display: flex; align-items: center;"><i class="fa fa-info-circle mr-4"></i> The estimated number of panels your home will require to meet your energy needs.</div>'>
                                         <img
-                                            src="assets/img/hours_icon.png"
+                                            src="assets/img/environmentalbenefit.png"
                                             alt="System Size"
                                             style={{ width: '130px', height: 'auto', marginRight: '15px' }}
                                         />

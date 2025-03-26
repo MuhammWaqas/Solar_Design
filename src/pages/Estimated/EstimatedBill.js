@@ -58,7 +58,7 @@ export default function EstimatedBill() {
                         </div>
                         <div className="d-flex flex-column justify-content-center align-items-center text-center mt-2">
                             <a
-                                onClick={() => navigate('/planpurchase')}
+                                onClick={() => navigate('/final')}
                                 className="button-elementd"
                             >
                                 NEXT
@@ -66,7 +66,7 @@ export default function EstimatedBill() {
                         </div>
                         <div className="d-flex flex-column justify-content-center align-items-center text-center mt-3">
                             <a
-                                onClick={() => navigate('/estimatedownlease')}
+                                onClick={() => navigate('/estimatedaddress')}
                                 style={{ color: 'rgba(255, 166, 0, 1)', textDecoration: 'underline', cursor: 'pointer' }}
                             >
                                 back

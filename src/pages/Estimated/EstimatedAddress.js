@@ -57,7 +57,7 @@ export default function EstimatedAddress() {
 
                                         <div className="mt-5">
                                             <a
-                                                onClick={() => navigate('/estimatedownlease')}
+                                                onClick={() => navigate('/estimatedbill')}
                                                 className="button-element"
                                             >
                                                 That’s Right
