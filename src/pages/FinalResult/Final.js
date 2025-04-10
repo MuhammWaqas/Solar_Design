@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import { GoogleMap, Marker, Circle, InfoWindow } from '@react-google-maps/api';
+import { AppContext } from '../StateManagement/Context';
 
 const data = [
     { year: 2021, solar: 2000, noSolar: 3000 },
@@ -13,6 +14,25 @@ const data = [
 
 export default function Final() {
     const navigate = useNavigate();
+    const { data: contextData } = useContext(AppContext); // Use context to get data
+    const [mapCenter, setMapCenter] = useState({ lat: 37.7749, lng: -122.4194 });
+    const [markerPosition, setMarkerPosition] = useState(null);
+    const [circleCenter, setCircleCenter] = useState(null);
+    const [circleRadius, setCircleRadius] = useState(100);
+    const [showInfoWindow, setShowInfoWindow] = useState(false);
+
+    useEffect(() => {
+        if (contextData.locationInfo) {
+            setMapCenter({
+                lat: contextData.locationInfo.geo[0],
+                lng: contextData.locationInfo.geo[1],
+            });
+            setMarkerPosition({
+                lat: contextData.locationInfo.geo[0],
+                lng: contextData.locationInfo.geo[1],
+            });
+        }
+    }, [contextData.locationInfo]);
 
     const [openSection, setOpenSection] = useState(null);
     const [imageSrc, setImageSrc] = useState("assets/img/solar_api.png");
@@ -46,26 +66,61 @@ export default function Final() {
                 setShowProfileCard(false);
                 setShowSolarCard(true); // Show solar card for section 3
                 setShowChart(true);
-                setSolarPotential(false);// Show chart for section 3
+                setSolarPotential(false); // Show chart for section 3
             }
         }
     };
 
     return (
         <>
-
             <section className="container-fluid p-0">
-
                 <div className="row g-0">
-
                     <div className="col-md-8 position-relative">
+                        <GoogleMap
+                            mapContainerStyle={{ height: '110vh', width: '100%' }}
+                            center={mapCenter}
+                            zoom={20}
+                            options={{
+                                mapTypeId: 'satellite',
+                                disableDefaultUI: true,
+                            }}
+                        >
+                            {data.locationInfo && (
+                                <>
+                                    {markerPosition && (
+                                        <Marker
+                                            position={markerPosition}
+                                            onClick={() => setShowInfoWindow(true)} // Show info window on marker click
+                                        />
+                                    )}
+                                    {showInfoWindow && markerPosition && (
+                                        <InfoWindow
+                                            position={markerPosition}
+                                            onCloseClick={() => setShowInfoWindow(false)} // Close info window
+                                        >
+                                            <div>
+                                                <h4>Building Insights</h4>
+                                                <p>Panel Count: {contextData.userInfo.panelcount}</p>
+                                                <p>Roof Area: {contextData.userInfo.roofarea}</p>
+                                                <p>Sunshine Hours: {contextData.userInfo.sunshine}</p>
+                                            </div>
+                                        </InfoWindow>
+                                    )}
+                                    {circleCenter && (
+                                        <Circle
+                                            center={circleCenter}
+                                            radius={circleRadius}
+                                            options={{
+                                                fillColor: 'rgba(255, 0, 0, 0.2)',
+                                                strokeColor: 'rgba(255, 0, 0, 0.5)',
+                                                strokeWeight: 2,
+                                            }}
+                                        />
+                                    )}
+                                </>
+                            )}
+                        </GoogleMap>
 
-                        <img
-                            src={imageSrc}
-                            alt="Solar System Map"
-                            className="img-fluid w-100"
-                            style={{ height: "110vh", objectFit: "cover" }}
-                        />
                         {showProfileCard && (
                             <div className="insights-card position-absolute" style={{ top: "20px", left: "20px", zIndex: 1000 }}>
                                 <div className="card-header">
@@ -76,19 +131,19 @@ export default function Final() {
                                 <div className="card-body">
                                     <div className="data-row">
                                         <span>Annual sunshine</span>
-                                        <span className="value">1,811.3 hr</span>
+                                        <span className="value">{contextData.userInfo?.sunshine || 'N/A'}</span>
                                     </div>
                                     <div className="data-row">
                                         <span>Roof area</span>
-                                        <span className="value">2,399.4 m²</span>
+                                        <span className="value">{contextData.userInfo?.roofarea || 'N/A'}</span>
                                     </div>
                                     <div className="data-row">
                                         <span>Max panel count</span>
-                                        <span className="value">987 panels</span>
+                                        <span className="value">{contextData.userInfo?.maxPanelCount || 'N/A'}</span>
                                     </div>
                                     <div className="data-row">
                                         <span>CO₂ savings</span>
-                                        <span className="value">428.9 Kg/MWh</span>
+                                        <span className="value">{contextData.userInfo?.carbonOffsetFactorKgPerMwh || 'N/A'}</span>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +329,6 @@ export default function Final() {
                             <div className="d-flex flex-row justify-content-center align-items-center text-center" style={{ marginTop: '8%' }}>
                                 <div className="me-2"> {/* Add margin-end for spacing between buttons */}
                                     <a
-
                                         className="group-btn"
                                         data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"
@@ -308,7 +362,7 @@ export default function Final() {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="exampleModalLabel">
-                              Powerd by MC3 
+                                Powered by MC3
                             </h1>
                             <button
                                 type="button"
@@ -358,7 +412,7 @@ export default function Final() {
                                     </div>
                                 </div>
                                 <div id="emailHelp" className="form-text">
-                                   To fill this form then you move next
+                                    To fill this form then you move next
                                 </div>
                             </div>
                         </div>
@@ -372,7 +426,6 @@ export default function Final() {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }

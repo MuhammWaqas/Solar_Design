@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { AppContext } from '../StateManagement/Context';
 import BoxNext from './BoxNext';
 import SolarEstimated from './SolarEstimated';
 import Graph from './Graph';
 import Footer from './Footer';
+import axios from 'axios';
 
 export default function FinalResult() {
+    const { userId } = useParams();
+    const { data } = useContext(AppContext);
+    const { userInfo } = data;
+    const [apiData, setApiData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`https://kcsundial.com/api/proposalshow/${userId}`);
+                setApiData(response.data.data[0]);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (userId) {
+            fetchData();
+        }
+    }, [userId]);
 
     return (
         <>
@@ -73,7 +97,7 @@ export default function FinalResult() {
             </div>
 
             <BoxNext />
-            <SolarEstimated />
+            <SolarEstimated apiData={apiData} />
             <Graph />
             <Footer />
         </>

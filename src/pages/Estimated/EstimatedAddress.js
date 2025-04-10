@@ -1,16 +1,24 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../StateManagement/Context';
 
 export default function EstimatedAddress() {
     const navigate = useNavigate();
+    const { data } = useContext(AppContext); // Use context to get data
+
+    // Extracting data from context
+    const address = data.locationInfo ?
+        `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, USA` :
+        "Address not provided";
+
+    console.log("Address Data:", data.locationInfo); // Log address data
 
     return (
         <div>
             <div
                 style={{
                     height: "110vh",
-                    backgroundImage:
-                        "url(assets/img/hero-section.png)",
+                    backgroundImage: "url(assets/img/hero-section.png)",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
@@ -18,18 +26,10 @@ export default function EstimatedAddress() {
             >
                 <div
                     className="position-absolute text-white d-flex flex-column align-items-center justify-content-center"
-                    style={{
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0,
-                        // backgroundColor: "rgba(0, 0, 0, 0.44)"
-                    }}
+                    style={{ top: 0, right: 0, bottom: 0, left: 0 }}
                 >
-
-
                     <div className='d-flex justify-content-center align-items-center text-center mt-4'>
-                        <div className="card" style={{ width: '90%', height: 'auto', padding: '10px'}}>
+                        <div className="card" style={{ width: '90%', height: 'auto', padding: '10px' }}>
                             <div className="container-fluid">
                                 <div className="row d-flex justify-content-center align-items-center">
                                     <div className="col-md-12 text-center">
@@ -42,17 +42,18 @@ export default function EstimatedAddress() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row g-0  mt-4">
+                            <div className="row g-0 mt-4">
                                 <div className="col-md-6 d-flex justify-content-center align-items-center text-center">
                                     <div className="sqs-html-content">
                                         <h3 style={{ whiteSpace: 'pre-wrap', fontSize: '36px', fontWeight: '600' }}>
                                             <strong>YOUR ADDRESS</strong>
                                         </h3>
-                                        <p className="mt-4">
-                                            Northeast Thames Drive 604 <br />
-                                            Lee's Summit <br />
-                                            Missouri 64086 <br />
-                                            USA
+                                        <p style={{ textAlign: 'center', marginTop: '15%' }}>
+                                            {address.split(',').map((line, index) => (
+                                                <span key={index}>
+                                                    {line}<br />
+                                                </span>
+                                            ))}
                                         </p>
 
                                         <div className="mt-5">
@@ -85,7 +86,6 @@ export default function EstimatedAddress() {
                                         style={{ maxHeight: '95%', maxWidth: '100%', borderRadius: '35% 2% 2% 2%', border: '1px solid rgba(255, 166, 0, 1)', objectFit: 'contain' }} // Use 'contain' to maintain aspect ratio
                                     />
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -100,9 +100,6 @@ export default function EstimatedAddress() {
                     }
                 }
             `}</style>
-
         </div>
-
-
-    )
+    );
 }

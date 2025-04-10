@@ -1,8 +1,36 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import { AppContext } from '../StateManagement/Context';
 
 export default function EstimatedBill() {
     const navigate = useNavigate();
+    const { data, setData } = useContext(AppContext); // Use context to get data
+    const [averageBill, setAverageBill] = useState(data.userInfo.monthly || 0); // Default value for the average bill
+
+    const handleInputChange = (event) => {
+        const newAverageBill = event.target.value;
+        setAverageBill(newAverageBill); // Update the average bill based on input value
+        setData(prevData => ({
+            ...prevData,
+            userInfo: {
+                ...prevData.userInfo,
+                monthly: newAverageBill // Update the average bill in context
+            }
+        }));
+    };
+
+    const handleNextClick = () => {
+        if (averageBill <= 0) {
+            alert("Please enter a valid average electricity bill before proceeding."); // Alert the user
+            return; // Prevent navigation
+        }
+
+        console.log("Average Electricity Bill:", averageBill);
+        console.log("Location Info:", data.locationInfo);
+        console.log("Building Insights:", data.buildingInsights);
+
+        navigate('/final'); // Navigate to the final page
+    };
 
     return (
         <>
@@ -24,8 +52,7 @@ export default function EstimatedBill() {
                         left: 0,
                     }}
                 >
-
-                    <div className="card" style={{ width: '50%', height: 'auto',padding: '10px' }}>
+                    <div className="card" style={{ width: '50%', height: 'auto', padding: '10px' }}>
                         <div className="container-fluid">
                             <div className="row d-flex justify-content-center align-items-center">
                                 <div className="col-md-12 text-center">
@@ -39,26 +66,27 @@ export default function EstimatedBill() {
                             </div>
                         </div>
                         <h2 style={{ textAlign: 'center', marginTop: '2%', fontSize: '20px', fontWeight: '600' }}>
-                            Monthly electricity bill. </h2>
-                        <div className="row g-0" style={{marginTop: '6%'}}>
+                            Monthly electricity bill.
+                        </h2>
+                        <div className="row g-0" style={{ marginTop: '6%' }}>
                             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
-
-                                {/* Left-align the label and input */}
-                                <div className="w-100 text-start" style={{ marginLeft: '16%' }}>
-                                    <label className="form-label">Electricity Bill</label>
-                                </div>
-                                <input type="text" className="form-control bill-s" placeholder="bill write here" />
-
+                                <label className="form-label">Electricity Bill</label>
+                                <input
+                                    type="number"
+                                    className="form-control bill-s"
+                                    placeholder="Enter your bill here"
+                                    value={averageBill}
+                                    onChange={handleInputChange}
+                                />
                             </div>
                         </div>
-                        {/* Icon and text below the radio buttons */}
-                        <div className="d-flex align-items-center text-muted small " style={{ marginLeft: '8%' }}>
+                        <div className="d-flex align-items-center text-muted small" style={{ marginLeft: '8%' }}>
                             <i className="fa fa-info-circle me-2"></i>
                             <span>Your information will remain confidential</span>
                         </div>
                         <div className="d-flex flex-column justify-content-center align-items-center text-center mt-2">
                             <a
-                                onClick={() => navigate('/final')}
+                                onClick={handleNextClick}
                                 className="button-elementd"
                             >
                                 NEXT
@@ -74,7 +102,6 @@ export default function EstimatedBill() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <style jsx>{`
@@ -87,5 +114,5 @@ export default function EstimatedBill() {
                 }
             `}</style>
         </>
-    )
+    );
 }
